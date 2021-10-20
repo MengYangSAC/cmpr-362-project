@@ -54,6 +54,10 @@ const HomeScreen = ({ navigation }) => {
             title="Delete"
             customClick={() => navigation.navigate('Delete')}
           />
+          <Mybutton
+            title="Timeline"
+            customClick={(navigation.navigate('Timeline'))}
+          />
         </View>
         <Text
           style={{

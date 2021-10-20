@@ -14,6 +14,7 @@ import UpdateUser from './pages/UpdateUser';
 import ViewUser from './pages/ViewUser';
 import ViewAllUser from './pages/ViewAllUser';
 import DeleteUser from './pages/DeleteUser';
+import Timeline from './pages/Timeline';
 
 const Stack = createStackNavigator();
 
@@ -102,6 +103,20 @@ const App = () => {
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {
               fontWeight: 'bold', //Set Header text style
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Timeline"
+          component={Timeline}
+          options={{
+            title: 'Timeline' , //Set timeline Title
+            headerStyle: {
+                backgroundColor: '#f4511e', //Set Header color
+            },
+            headerTintColor: '#fff', //Set Header Text color
+            headerTitleStyle: {
+                fontWeight: 'bold', //Set Header text style
             },
           }}
         />
