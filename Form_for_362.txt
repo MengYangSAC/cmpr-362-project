@@ -1,0 +1,175 @@
+import React from 'react';
+import {
+    View,
+    TextInput,
+    Text,
+    StyleSheet,
+    Button
+} from 'react-native';
+
+class New extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            name: '',
+            lastname: '',
+            cwid: '',
+            confirmcwid: '',
+            password: '',
+            confirmpassword: '',
+            cwiderror: '',
+            confirmcwiderror: '',
+            nameerror: '',
+        }
+
+    }
+    submit() {
+        let val = /^[a-zA-z]+$/;
+        let isvalid = val.test(this.state.name)
+        console.log(this.state)
+        if (!isvalid) {
+            this.setState({ nameerror: "name should be alphabetic" })
+        }
+        else {
+            this.setState({ nameerror: "" })
+        }
+    }
+
+    submit1() {
+        let val = /^[a-zA-z]+$/;
+        let isvalid = val.test(this.state.lastname)
+        console.log(this.state)
+        if (!isvalid) {
+            this.setState({ lastnameerror: "lastname should be alphabetic" })
+        }
+        else {
+            this.setState({ lastnameerror: "" })
+        }
+    }
+
+    namecheck() {
+        if (this.state.name == "") {
+            this.state({ nameerror: "name can not be empty" })
+        }
+        else {
+            this.state({ nameerror: "" })
+        }
+
+    }
+
+    lastnamecheck() {
+        if (this.state.lastname == "") {
+            this.state({ lastnameerror: "lastname can not be empty" })
+        }
+        else {
+            this.state({ lastnameerror: "" })
+        }
+
+    }
+
+    cwidcheck() {
+        if (this.state.cwid == "") {
+            this.state({ cwiderror: "cwid can not be empty" })
+        }
+        else {
+            this.state({ cwiderror: "" })
+        }
+    }
+
+    cofirmcwidcheck() {
+        if (this.state.confirmcwid == "") {
+            this.state({ confirmcwiderror: "confirmcwid can not be empty" })
+        }
+
+        else {
+            this.state({ confirmcwiderror: "" })
+        }
+    }
+
+
+    render() {
+
+        return (
+            <View style={styles.container} >
+                <Text style={{ marginTop: 18 }}>Enter Name:</Text>
+                <TextInput style={{ borderColor: 'orange', borderWidth: 2 }}
+                    placeholder="enter name"
+                    onBlur={() => this.namecheck()}
+                    onChangeText={(text) => this.setState({ name: text })}>
+
+                </TextInput>
+                <Text style={{ color: 'red' }}>{this.state.nameerror}</Text>
+
+
+                <Text style={{ marginTop: 18 }}>Enter Last Name:</Text>
+                <TextInput style={{ borderColor: 'orange', borderWidth: 2 }}
+                    placeholder="enter lastname"
+                    onBlur={() => this.lastnamecheck()}
+                    onChangeText={(text) => this.setState({ lastname: text })}>
+
+                </TextInput>
+                <Text style={{ color: 'red' }}>{this.state.lastnameerror}</Text>
+
+
+
+                <Text style={{ marginTop: 18 }}>Enter CWID:</Text>
+                <TextInput style={{ borderColor: 'orange', borderWidth: 2 }}
+                    placeholder="enter cwid"
+                    onBlur={() => this.cwidcheck()}
+                    onChangeText={(text) => this.setState({ cwid: text })}>
+
+                </TextInput>
+                <Text style={{ color: 'red' }}>{this.state.cwiderror}</Text>
+
+
+
+                <Text style={{ marginTop: 18 }}>Confirm CWID:</Text>
+                <TextInput style={{ borderColor: 'orange', borderWidth: 2 }}
+                    placeholder="confirm cwid"
+                    onBlur={() => this.confirmcwidcheck()}
+                    onChangeText={(text) => this.setState({ confirmcwid: text })}>
+
+                </TextInput>
+                <Text style={{ color: 'red' }}>{this.state.confirmcwiderror}</Text>
+
+
+
+                <Text style={{ marginTop: 18 }}> Enter Password</Text>
+                <TextInput style={{ borderColor: 'orange', borderWidth: 2, }}
+                    placeholder="enter password"
+                    onChangeText={(text) => this.setState({ password: text })}
+                    secureTextEntry={true}
+                    maxLength={8}>
+                </TextInput>
+
+
+
+                <Text style={{ marginTop: 18 }}> Confirm Password</Text>
+                <TextInput style={{
+                    borderColor: 'orange', borderWidth: 2, marginBottom: 18
+                }}
+                    placeholder="confirm password"
+                    onChangeText={(text) => this.setState({ confirmpassword: text })}
+                    secureTextEntry={true}
+                    maxLength={8}>
+                </TextInput>
+
+                <Button title='submit' onPress={() => { this.submit() }} />
+
+            </View >
+
+        );
+    }
+}
+export default New;
+
+const styles = StyleSheet.create({
+    container: {
+        justifyContent: 'top',
+        marginTop: 50,
+        padding: 20,
+        flex: 1,
+
+    },
+});
+
