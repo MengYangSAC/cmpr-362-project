@@ -8,6 +8,7 @@ import { Button, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import LoginScreen from './pages/LoginScreen';
 import HomeScreen from './pages/HomeScreen';
 import RegisterUser from './pages/RegisterUser';
 import UpdateUser from './pages/UpdateUser';
@@ -20,7 +21,21 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomeScreen">
+      <Stack.Navigator initialRouteName="LoginScreen">
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{
+            title: 'Welcome to Titan Talks', //Set Header Title
+            headerStyle: {
+              backgroundColor: '#f4511e', //Set Header color
+            },
+            headerTintColor: '#fff', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            },
+          }}
+        />
         <Stack.Screen
           name="HomeScreen"
           component={HomeScreen}
