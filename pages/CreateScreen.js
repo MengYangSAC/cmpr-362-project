@@ -11,18 +11,9 @@ var db = openDatabase({ name: 'UserDatabase.db' });
 
 const styles = StyleSheet.create({
   logo: {
-    width:  354,
-    height: 450,
+    width:  236,
+    height: 300,
     resizeMode: 'stretch',
-    marginRight:'auto',
-    marginLeft:'auto',
-  },
-  header:{
-    fontWeight: 'bold',
-    color: 'white',
-    fontSize: 35,
-    marginTop: 20,
-    marginBottom: 20,
     marginRight:'auto',
     marginLeft:'auto',
   },
@@ -68,14 +59,39 @@ const HomeScreen = ({ navigation }) => {
           source={require('./images/Tuffy.png')}
       />
       <Text 
-        style={styles.header}>Welcome Back!
-      </Text>
+        style={styles.text}>Enter Name:
+      </Text>          
+      <TextInput 
+        style={styles.textInput}
+        placeholder="Name">
+      </TextInput>
+
+       <Text style={styles.text}>Enter Last Name:</Text>
+       <TextInput 
+        style={styles.textInput}
+        placeholder="Last name">
+      </TextInput>
+
       <Text 
         style={styles.text}>Enter CWID:
       </Text>
       <TextInput 
         style={styles.textInput}
         placeholder="CWID">
+      </TextInput>
+
+      <Text 
+        style={styles.text}>Confirm CWID:
+      </Text>
+      <TextInput 
+        style={styles.textInput}
+        placeholder="Confirm CWID">
+      </TextInput>
+
+      <Text style={styles.text}> Enter Password</Text>
+      <TextInput 
+        style={styles.textInput}
+        placeholder="Enter Password">
       </TextInput>
 
       <Text style={styles.text}> Enter Password</Text>
@@ -85,7 +101,7 @@ const HomeScreen = ({ navigation }) => {
       </TextInput>
 
       <Mybutton
-        title="Login"
+        title="Create Account"
         customClick={() => navigation.navigate('')}
       />
     </View >
