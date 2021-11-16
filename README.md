@@ -69,7 +69,7 @@ This application allows for CSUF students to connect in a new way. Users can sha
    => Timeline
 
 ## Wireframes
-<img src="tt_wf.jpg" width=600>
+<img src="tt_wireframe.jpg" width=600>
 
 ## Schema 
 
